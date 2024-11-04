@@ -105,7 +105,7 @@ if __name__ == "__main__":
                 snake.forward((pos_x, pos_y), grow=True)
                 fruit_pos = generate_random_food(square_size=square_size, positions=positions)
             
-            elif position[0] not in range(601) or position[1] not in range(601) or position in snake.parts_pos[snake.parts_pos == position]:
+            elif position[0] not in range(601) or position[1] not in range(601) or position in snake.parts_pos[1:] and len(snake.parts_pos) > 1:
                 gameover = True
                 screen.fill(black)
                 screen.blit(txt_gameover, (180, 250))
